@@ -13,11 +13,11 @@ function vibrate() {    // Morse code string has SPACES in between each letter, 
             vibeArr.push(150)
         }
         else if(c == "-") {
-            vibeArr.push(1000)
+            vibeArr.push(1500)
             vibeArr.push(150)
         }
         else
-            vibeArr.push(2500)
+            vibeArr.push(3000)
     }
 
     if (!window) {
