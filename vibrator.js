@@ -20,9 +20,9 @@ function vibrate() {    // Morse code string has SPACES in between each letter, 
                 vibeArr.push(250)
             }
             else if(c == " " && prevChar == " " && k != 0)
-                vibeArr[vibeArr.length -1] += 1500
+                vibeArr[vibeArr.length -1] = 1750
             else
-                vibeArr[vibeArr.length -1] += 500
+                vibeArr[vibeArr.length -1] = 750
             prevChar = c;
         }
     }
