@@ -12,17 +12,17 @@ function vibrate() {    // Morse code string has SPACES in between each letter, 
             let c = morseString.charAt(k)
 
             if(c == ".") {
-                vibeArr.push(500)
-                vibeArr.push(500)
+                vibeArr.push(250)
+                vibeArr.push(250)
             }
             else if(c == "-") {
-                vibeArr.push(1500)
-                vibeArr.push(500)
+                vibeArr.push(750)
+                vibeArr.push(250)
             }
             else if(c == " " && prevChar == " " && k != 0)
-                vibeArr.push(2000)
+                vibeArr.at(-1) += 1500
             else
-                vibeArr.push(1000)
+                vibeArr.at(-1) += 500
             prevChar = c;
         }
     }
