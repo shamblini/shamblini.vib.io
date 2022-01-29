@@ -9,15 +9,15 @@ function vibrate() {    // Morse code string has SPACES in between each letter, 
         let c = morseString.charAt(k)
 
         if(c == ".") {
-            vibeArr.push(100)
-            vibeArr.push(30)
+            vibeArr.push(500)
+            vibeArr.push(150)
         }
         else if(c == "-") {
-            vibeArr.push(200)
-            vibeArr.push(30)
+            vibeArr.push(1000)
+            vibeArr.push(150)
         }
         else
-            vibeArr.push(500)
+            vibeArr.push(2500)
     }
 
     if (!window) {
