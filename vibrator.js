@@ -5,6 +5,7 @@ function vibrate() {    // Morse code string has SPACES in between each letter, 
     document.getElementById("test").innerHTML = morseString;
 
     let vibeArr = []
+    const timeUnit = 100
 
     if(morseString.length != 0) {
         let prevChar = morseString.charAt(0);
@@ -12,20 +13,20 @@ function vibrate() {    // Morse code string has SPACES in between each letter, 
             let c = morseString.charAt(k)
 
             if(c == ".") {
-                vibeArr.push(250)
-                vibeArr.push(250)
+                vibeArr.push(timeUnit)
+                vibeArr.push(timeUnit)
             }
             else if(c == "-") {
-                vibeArr.push(750)
-                vibeArr.push(250)
+                vibeArr.push(timeUnit*3)
+                vibeArr.push(timeUnit)
             }
             else if(c == " " && prevChar == " " && k != 0) {
                 vibeArr.pop()
-                vibeArr.push(1750)
+                vibeArr.push(timeUnit*7)
             }
             else {
                 vibeArr.pop()
-                vibeArr.push(750)
+                vibeArr.push(timeUnit*3)
             }
             prevChar = c;
         }
