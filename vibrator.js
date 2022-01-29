@@ -5,19 +5,26 @@ function vibrate() {    // Morse code string has SPACES in between each letter, 
     document.getElementById("test").innerHTML = morseString;
 
     let vibeArr = []
-    for(let k = 0; k < morseString.length; k++) {
-        let c = morseString.charAt(k)
 
-        if(c == ".") {
-            vibeArr.push(500)
-            vibeArr.push(150)
+    if(morseString.length != 0) {
+        let prevChar = morseString.charAt(0);
+        for(let k = 0; k < morseString.length; k++) {
+            let c = morseString.charAt(k)
+
+            if(c == ".") {
+                vibeArr.push(500)
+                vibeArr.push(500)
+            }
+            else if(c == "-") {
+                vibeArr.push(1500)
+                vibeArr.push(500)
+            }
+            else if(c == " " && prevChar == " " && k != 0)
+                vibeArr.push(3500)
+            else
+                vibeArr.push(1500)
+            prevChar = c;
         }
-        else if(c == "-") {
-            vibeArr.push(1500)
-            vibeArr.push(150)
-        }
-        else
-            vibeArr.push(3000)
     }
 
     if (!window) {
